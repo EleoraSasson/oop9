@@ -1,3 +1,5 @@
+package WS1;
+
 import java.util.Random;
 
 public class RandomSupplier {

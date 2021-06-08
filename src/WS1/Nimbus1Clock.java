@@ -1,3 +1,5 @@
+package WS1;
+
 public class Nimbus1Clock extends AlarmClock
 {
     protected Nimbus1Clock()

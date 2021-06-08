@@ -1,9 +1,11 @@
+package WS1;
+
 import WS1.Observables.AlarmClockRecord;
 import WS1.Observables.AlarmListener;
 
 import java.util.ArrayList;
 
-public class AlarmClock
+public class AlarmClock extends AlarmClockRecord //check what extends what
 {
     public final int CLOCK_INTERVAL_MILLIS = 100;
     protected static AlarmClock instance = null;
