@@ -1,7 +1,4 @@
-package WS1;
-
-import WS1.Observables.AlarmClockRecord;
-import WS1.Observables.AlarmListener;
+package WS1.Observables;
 
 import java.util.ArrayList;
 
@@ -19,7 +16,7 @@ public class AlarmClock extends AlarmClockRecord //check what extends what
         return instance;
     }
 
-    protected void tic(){
+    protected void tic(){ //Eleora
         //TODO: fix
     }
 

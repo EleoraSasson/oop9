@@ -1,4 +1,4 @@
-package WS1;
+package WS1.Nimbus1;
 
 import java.util.Random;
 

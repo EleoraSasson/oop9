@@ -1,4 +1,4 @@
-package WS1;
+package WS1.Observables;
 
 import java.util.Observable;
 

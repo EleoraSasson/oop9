@@ -1,4 +1,6 @@
-package WS1;
+package WS1.Nimbus1;
+
+import WS1.Observables.AlarmClock;
 
 public class Nimbus1Clock extends AlarmClock
 {
