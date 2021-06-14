@@ -1,14 +1,13 @@
 package WS1.Observables;
 
-import java.util.Observable;
+//use eleora's
+public abstract class Sensor extends Observable
+{
+    public abstract int read();
 
-public class Sensor {
-    //uses SensorAlarmListener
-
-    int read() {
-        return 0;
-    }
-
-    void check() {
+    public void check()
+    {
+        int data = read(); //call the read functions of the sensors and get the data
+        notifyObservers(data);
     }
 }

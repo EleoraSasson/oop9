@@ -1,11 +1,14 @@
 package WS1.Observers;
 
+import WS1.Observables.Observable;
+
 public class LogPressObserver implements Observer
 {
-    @Override
-    public void update(int data) {
-        System.out.println("LogPressObserver");
+    Log LogPressure;
 
-//gila
+    @Override
+    public void update(int data)
+    {
+        LogPressure.displayPressureLog(data);
     }
 }

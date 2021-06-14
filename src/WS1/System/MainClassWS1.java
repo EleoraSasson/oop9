@@ -13,6 +13,5 @@ public class MainClassWS1
 
         MonitoringScreen p_MonitorScreen = new MonitoringScreen(ws);
         Log p_log = new Log(ws);
-
     }
 }

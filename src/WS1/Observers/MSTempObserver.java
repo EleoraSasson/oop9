@@ -1,11 +1,18 @@
 package WS1.Observers;
 
+import WS1.Nimbus1.RandomSupplier;
+import WS1.Observables.Observable;
+
+import java.util.Random;
+
 public class MSTempObserver implements Observer
 {
-    @Override
-    public void update(int data) {
-        System.out.println("MSTempObserver");
+    MonitoringScreen MSTemperature;
 
-//gila
+    @Override
+    public void update(int data)
+    {
+        MSTemperature.displayTemp(data);
     }
 }
+
