@@ -1,9 +1,9 @@
 package WS1.Observers;
 
-import WS1.Observables.Observable;
+public interface Observer<T> {
 
-public interface Observer
-{
-    void update(int data);
-    //may need to add getName to indicate when class is created
+    public void update(T data);
+
+    public String getName();
+
 }

@@ -2,25 +2,37 @@ package WS1.Observables;
 
 import java.util.ArrayList;
 
-public class AlarmClock extends AlarmClockRecord //check what extends what
+/*
+We need a getName overridden in most of the classes
+ */
+public class AlarmClock  //check what extends what
 {
-    public final int CLOCK_INTERVAL_MILLIS = 100;
+    public static final int CLOCK_INTERVAL_MILLIS = 100;
     protected static AlarmClock instance = null;
-    private ArrayList<AlarmClockRecord> itsAlarmClockRecords = new ArrayList();
+    private ArrayList<AlarmClockRecord> itsAlarmClockRecords = new ArrayList<>();
 
-    protected AlarmClock() {}
-    public static AlarmClock theInstance()
-    {
-        if(null==instance)
+    public static AlarmClock theInstance() {
+        if (null == instance) {
             instance = new AlarmClock();
+        }
         return instance;
     }
 
+    protected AlarmClock(){}
+
     protected void tic(){ //Eleora
-        //TODO: fix
+        for (AlarmClockRecord record: itsAlarmClockRecords)
+        {
+            if (record.getIntervalDecrement() - CLOCK_INTERVAL_MILLIS <= 0)
+            {
+                record.getListener().wakeUp();
+                record.setIntervalDecrement (record.getInterval());
+            }
+            else record.setIntervalDecrement(record.getIntervalDecrement() -CLOCK_INTERVAL_MILLIS);
+        }
     }
 
-    public void register(int interval, AlarmListener pal) {
-        //TODO: fix
+    public void register(int interval, AlarmListener al) {
+        itsAlarmClockRecords.add(new AlarmClockRecord(interval, al));
     }
 }
