@@ -9,4 +9,9 @@ public class LogPressTrendObserver implements Observer
     {
         LogPressure.displayPressureTrend(data);
     }
+
+    @Override
+    public String getName() {
+        return this.toString();
+    }
 }

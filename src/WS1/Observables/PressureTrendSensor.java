@@ -31,8 +31,13 @@ public class PressureTrendSensor extends Observable implements Observer
         else {notifyObservers(2);} //pressure is stable represented by int value 2
 
     }
+    @Override
+    public String getName() {
+        return null;
+    }
 
-    void notifyObservers(int data) {
+    public void notifyObservers(int data) {
         super.notifyObservers(data);
     }
+
 }

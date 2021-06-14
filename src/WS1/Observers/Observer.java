@@ -2,7 +2,7 @@ package WS1.Observers;
 
 public interface Observer<T> {
 
-    public void update(T data);
+    public void update(int data);
 
     public String getName();
 

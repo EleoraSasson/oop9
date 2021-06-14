@@ -10,4 +10,9 @@ public class MSPressObserver implements Observer
     {
         MSPressure.displayPressure(data);
     }
+
+    @Override
+    public String getName() {
+        return this.toString();
+    }
 }

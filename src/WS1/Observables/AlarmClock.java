@@ -20,7 +20,7 @@ public class AlarmClock  //check what extends what
 
     protected AlarmClock(){}
 
-    protected void tic(){ //Eleora
+    protected void tic(){
         for (AlarmClockRecord record: itsAlarmClockRecords)
         {
             if (record.getIntervalDecrement() - CLOCK_INTERVAL_MILLIS <= 0)

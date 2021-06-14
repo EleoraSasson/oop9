@@ -14,5 +14,10 @@ public class MSTempObserver implements Observer
     {
         MSTemperature.displayTemp(data);
     }
+
+    @Override
+    public String getName() {
+        return this.toString();
+    }
 }
 

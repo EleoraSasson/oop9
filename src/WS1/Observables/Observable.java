@@ -17,7 +17,7 @@ public abstract class Observable<T> {
         System.out.println(observer.getName() + " observes " + getName());
     }
 
-    public void notifyObservers(T data) {
+    public void notifyObservers(int data) {
         for (Observer<T> observer : observers) {
             observer.update(data);
         }

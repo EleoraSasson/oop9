@@ -11,4 +11,9 @@ public class LogPressObserver implements Observer
     {
         LogPressure.displayPressureLog(data);
     }
+
+    @Override
+    public String getName() {
+        return this.toString();
+    }
 }
