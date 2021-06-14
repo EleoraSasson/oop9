@@ -1,14 +1,23 @@
 package WS1.Observables;
 
-import java.util.Observable;
+import WS1.Nimbus1.Nimbus1Clock;
 
-public class Sensor {
+public abstract class Sensor extends Observable<Integer> {
+
+    protected abstract int read();
+
     //uses SensorAlarmListener
-
-    int read() {
-        return 0;
+    private Integer last;
+    protected Sensor(int interval) {
+        last = null;
+        System.out.println(getName() + " registered to clock");
+        Nimbus1Clock.theInstance().register(interval, new SensorAlarmListener(this));
     }
 
-    void check() {
+    public void check() {
+        int reading = read();
+        if (last == null || reading != last)
+            notifyObservers(reading);
+        last = reading;
     }
 }
