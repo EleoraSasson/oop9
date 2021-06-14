@@ -4,15 +4,15 @@ import WS1.Observables.Observable;
 
 public class MSPressObserver implements Observer
 {
-    MonitoringScreen MSPressure;
+    private MonitoringScreen MSPressure;
+    public MSPressObserver(MonitoringScreen ms)
+    {
+        System.out.println("MSPressObserver was created");
+        this.MSPressure = ms;
+    }
     @Override
     public void update(int data)
     {
         MSPressure.displayPressure(data);
-    }
-
-    @Override
-    public String getName() {
-        return this.toString();
     }
 }

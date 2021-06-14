@@ -1,13 +1,19 @@
 package WS1.Observables;
 
+import WS1.Nimbus1.Nimbus1PressureSensor;
 import WS1.Observers.Observer;
 
 public class PressureTrendSensor extends Observable implements Observer
 { //implements observer design pattern
 
-    int a; // oldest pressure reading
-    int b; // middle pressure reading
-    int c; // most recently recorded pressure reading
+    public PressureTrendSensor(Nimbus1PressureSensor PressSensor)
+    {
+       System.out.println("PressureTrendSensor observes pressure");
+       PressSensor.addObserver(this);
+    }
+    public int a; // oldest pressure reading
+    public int b; // middle pressure reading
+    public int c; // most recently recorded pressure reading
 
     @Override
     public void update(int data)
@@ -31,11 +37,6 @@ public class PressureTrendSensor extends Observable implements Observer
         else {notifyObservers(2);} //pressure is stable represented by int value 2
 
     }
-    @Override
-    public String getName() {
-        return null;
-    }
-
     public void notifyObservers(int data) {
         super.notifyObservers(data);
     }

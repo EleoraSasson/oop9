@@ -7,17 +7,17 @@ import java.util.Random;
 
 public class MSTempObserver implements Observer
 {
-    MonitoringScreen MSTemperature;
-
+    private MonitoringScreen MSTemperature;
+    public MSTempObserver(MonitoringScreen ms)
+    {
+        System.out.println("MSTempObserver was created");
+        this.MSTemperature = ms;
+    }
     @Override
     public void update(int data)
     {
         MSTemperature.displayTemp(data);
     }
 
-    @Override
-    public String getName() {
-        return this.toString();
-    }
 }
 

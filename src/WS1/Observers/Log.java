@@ -6,11 +6,15 @@ import java.util.Locale;
 
 public class Log
 {
-    public Log(WeatherMonitoringSystem ws) { }
+    public Log(WeatherMonitoringSystem ws) {
+        System.out.println("Log was created");
+        ws.addPressureObserver(new LogPressObserver(this));
+        ws.addPressureTrendObserver(new LogPressTrendObserver(this));
+    }
 
     public void displayPressureLog(int data)
     {
-        System.out.println("Log: pressure = " + data + "millibars");
+        System.out.println("Log: pressure = " + data + " millibars");
     }
     public void displayPressureTrend(int data)
     {

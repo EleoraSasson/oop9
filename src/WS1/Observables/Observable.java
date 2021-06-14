@@ -14,7 +14,6 @@ public abstract class Observable<T> {
 
     public void addObserver(Observer<T> observer) {
         observers.add(observer);
-        System.out.println(observer.getName() + " observes " + getName());
     }
 
     public void notifyObservers(int data) {
@@ -22,7 +21,4 @@ public abstract class Observable<T> {
             observer.update(data);
         }
     }
-
-    public abstract String getName();
-
 }

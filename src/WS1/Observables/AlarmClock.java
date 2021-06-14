@@ -2,10 +2,7 @@ package WS1.Observables;
 
 import java.util.ArrayList;
 
-/*
-We need a getName overridden in most of the classes
- */
-public class AlarmClock  //check what extends what
+public class AlarmClock
 {
     public static final int CLOCK_INTERVAL_MILLIS = 100;
     protected static AlarmClock instance = null;

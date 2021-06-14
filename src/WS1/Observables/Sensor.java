@@ -10,7 +10,6 @@ public abstract class Sensor extends Observable<Integer> {
     private Integer last;
     protected Sensor(int interval) {
         last = null;
-        System.out.println(getName() + " registered to clock");
         Nimbus1Clock.theInstance().register(interval, new SensorAlarmListener(this));
     }
 

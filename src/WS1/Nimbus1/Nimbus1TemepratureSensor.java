@@ -9,11 +9,6 @@ public class Nimbus1TemepratureSensor extends Sensor
     {
         super(700);
     }
-
-    @Override
-    public String getName() {
-        return "temperature";
-    }
     @Override
     public int read()
     {

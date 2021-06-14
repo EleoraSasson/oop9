@@ -4,15 +4,20 @@ import WS1.Observables.WeatherMonitoringSystem;
 
 public class MonitoringScreen
 {
-    public MonitoringScreen(WeatherMonitoringSystem ws) { }
+    public MonitoringScreen(WeatherMonitoringSystem ws)
+    {
+        System.out.println("MonitoringScreen was created");
+        ws.addTemperatureObserver(new MSTempObserver(this));
+        ws.addPressureObserver(new MSPressObserver(this));
+    }
 
     public void displayTemp(int data)
     {
-        System.out.println("MonitoringScreen: temperature =" + data + "celsius");
+        System.out.println("MonitoringScreen: temperature = " + data + " celsius");
     }
 
     public void displayPressure(int data)
     {
-        System.out.println("MonitoringScreen: pressure =" + data + "millibars");
+        System.out.println("MonitoringScreen: pressure = " + data + " millibars");
     }
 }
