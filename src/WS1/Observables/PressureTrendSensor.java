@@ -6,11 +6,17 @@ import WS1.Observers.Observer;
 public class PressureTrendSensor extends Observable implements Observer
 { //implements observer design pattern
 
-    public PressureTrendSensor(Nimbus1PressureSensor PressSensor)
+//    public PressureTrendSensor(Nimbus1PressureSensor PressSensor)
+//    {
+//       System.out.println("PressureTrendSensor observes pressure");
+//       PressSensor.addObserver(this);
+//    }
+    public  PressureTrendSensor(PressureSensor PressSensor)
     {
-       System.out.println("PressureTrendSensor observes pressure");
+        System.out.println("PressureTrendSensor observes pressure");
        PressSensor.addObserver(this);
     }
+
     public int a = 0; // oldest pressure reading
     public int b = 0; // middle pressure reading
     public int c = 0; // most recently recorded pressure reading

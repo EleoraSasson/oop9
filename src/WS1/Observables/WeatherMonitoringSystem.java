@@ -7,8 +7,10 @@ import WS1.Observers.Observer;
 
 public class WeatherMonitoringSystem
 {
-    private Nimbus1PressureSensor PressSensor;
-    private Nimbus1TemepratureSensor TempSensor;
+    //private Nimbus1PressureSensor PressSensor;
+    //private Nimbus1TemepratureSensor TempSensor;
+    private PressureSensor PressSensor;
+    private TempeartureSensor TempSensor;
     private PressureTrendSensor PressTrendSensor;
 
     protected  static WeatherMonitoringSystem instance;
@@ -16,9 +18,11 @@ public class WeatherMonitoringSystem
     {
         System.out.println("WeatherMonitoringSystem was created");
         AlarmClock clock = Nimbus1Clock.theInstance();
-        PressSensor = new Nimbus1PressureSensor(1100);
+       // PressSensor = new Nimbus1PressureSensor();
+        PressSensor = new PressureSensor(1100);
         System.out.println("pressure registered to clock");
-        TempSensor = new Nimbus1TemepratureSensor(700);
+        //TempSensor = new Nimbus1TemepratureSensor();
+        TempSensor = new TempeartureSensor(700);
         System.out.println("temperature registered to clock");
         PressTrendSensor = new PressureTrendSensor(PressSensor);
     };

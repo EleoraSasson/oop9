@@ -30,5 +30,6 @@ public class AlarmClock
 
     public void register(int interval, AlarmListener al) {
         itsAlarmClockRecords.add(new AlarmClockRecord(interval, al));
+        System.out.println(getClass().getName() + "registered to clock");
     }
 }
