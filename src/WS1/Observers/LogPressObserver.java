@@ -1,6 +1,5 @@
 package WS1.Observers;
 
-import WS1.Observables.Observable;
 
 public class LogPressObserver implements Observer
 {

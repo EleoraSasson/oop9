@@ -8,14 +8,13 @@ public class AlarmClock
     protected static AlarmClock instance = null;
     private ArrayList<AlarmClockRecord> itsAlarmClockRecords = new ArrayList<>();
 
-    public static AlarmClock theInstance() {
-        if (null == instance) {
+    protected AlarmClock() {}
+    public static AlarmClock theInstance()
+    {
+        if(null==instance)
             instance = new AlarmClock();
-        }
         return instance;
     }
-
-    protected AlarmClock(){}
 
     protected void tic(){
         for (AlarmClockRecord record: itsAlarmClockRecords)

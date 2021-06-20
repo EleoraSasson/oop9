@@ -17,7 +17,9 @@ public class WeatherMonitoringSystem
         System.out.println("WeatherMonitoringSystem was created");
         AlarmClock clock = Nimbus1Clock.theInstance();
         PressSensor = new Nimbus1PressureSensor(1100);
+        System.out.println("pressure registered to clock");
         TempSensor = new Nimbus1TemepratureSensor(700);
+        System.out.println("temperature registered to clock");
         PressTrendSensor = new PressureTrendSensor(PressSensor);
     };
     public static WeatherMonitoringSystem theInstance()
@@ -27,22 +29,22 @@ public class WeatherMonitoringSystem
         return instance;
     }
 
+    public void addTemperatureObserver(Observer observer)
+    {
+        TempSensor.addObserver(observer);
+        System.out.println("MSTempObserver observes temperature");
+    }
+
     public void addPressureObserver(Observer observer)
     {
         PressSensor.addObserver(observer);
-        System.out.println("MSPressObserver observes pressure");
+        System.out.println(observer.getClass().getSimpleName() + " observes pressure");
     }
 
     public void addPressureTrendObserver(Observer observer)
     {
         PressTrendSensor.addObserver(observer);
         System.out.println("LogPressTrendObserver observes pressure trend");
-    }
-
-    public void addTemperatureObserver(Observer observer)
-    {
-        TempSensor.addObserver(observer);
-        System.out.println("MSTempObserver observes temperature");
     }
 
 }

@@ -13,7 +13,7 @@ public class MonitoringScreen
 
     public void displayTemp(int data)
     {
-        System.out.println("MonitoringScreen: temperature = " + data + " celsius");
+        System.out.println("MonitoringScreen: temperature = " + data + " Celsius");
     }
 
     public void displayPressure(int data)

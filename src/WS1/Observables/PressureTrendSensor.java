@@ -11,9 +11,9 @@ public class PressureTrendSensor extends Observable implements Observer
        System.out.println("PressureTrendSensor observes pressure");
        PressSensor.addObserver(this);
     }
-    public int a; // oldest pressure reading
-    public int b; // middle pressure reading
-    public int c; // most recently recorded pressure reading
+    public int a = 0; // oldest pressure reading
+    public int b = 0; // middle pressure reading
+    public int c = 0; // most recently recorded pressure reading
 
     @Override
     public void update(int data)
@@ -28,13 +28,13 @@ public class PressureTrendSensor extends Observable implements Observer
 
     public void checkTrend()
     {
-        if(b<c && a<b)
-        { notifyObservers(3);} //pressure is rising represented by int value 3
+        if (b>c && a>b)
+        { notifyObservers(3);} //pressure is falling represented by int value 3
 
-        else if (b>c && a>b)
-        { notifyObservers(1);} //pressure is falling represented by int value 1
+        else if(b<c && a<b)
+        { notifyObservers(2);} //pressure is rising represented by int value 2
 
-        else {notifyObservers(2);} //pressure is stable represented by int value 2
+        else if (a != 0) {notifyObservers(1);} //pressure is stable represented by int value 1
 
     }
     public void notifyObservers(int data) {
